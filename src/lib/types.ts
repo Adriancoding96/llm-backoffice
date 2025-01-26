@@ -19,6 +19,11 @@ export interface PromptRecord {
   uuid: string;
 }
 
+export interface PromptRequest {
+  prompt: string;
+  model: string;
+}
+
 export interface PromptResponse {
   response: string;
   keywords: string[];
