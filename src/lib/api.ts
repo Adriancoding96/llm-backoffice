@@ -14,9 +14,18 @@ let token: string | null = null;
 
 export function setToken(newToken: string): void {
   token = newToken;
+
+  if(newToken) {
+    localStorage.setItem("jwtToken", newToken);
+  } else {
+    localStorage.removeItem("jwtToken");
+  }
 }
 
 export function getToken(): string | null {
+  if(!token) {
+    token = localStorage.getItem("jwtToken");
+  }
   return token;
 }
 
